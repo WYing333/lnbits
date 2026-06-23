@@ -929,6 +929,7 @@ window.localisation.en = {
   inputs: 'Inputs',
   outputs: 'Outputs',
   confirmations: 'Confirmations',
+  confirmed: 'Confirmed',
   unconfirmed: 'Unconfirmed',
   no_transactions: 'No transactions found',
   address: 'Address'
