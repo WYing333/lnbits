@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends
 
 from lnbits.core.crud.audit import (
+    delete_expired_audit_entries,
     get_audit_entries,
     get_count_stats,
     get_long_duration_stats,
@@ -47,3 +48,13 @@ async def api_get_audit_stats(
         component=components_stats,
         long_duration=long_duration_stats,
     )
+
+
+@audit_router.delete(
+    "/expired",
+    name="Purge expired audit entries",
+    summary="Delete audit entries past their retention window",
+)
+async def api_purge_expired_audit() -> None:
+    # API layer calling down into the data layer (correct dependency order).
+    await delete_expired_audit_entries()
