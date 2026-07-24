@@ -142,3 +142,5 @@ async def get_settings_by_tag(tag: str) -> dict[str, Any] | None:
             )
     data.pop("super_user")
     return data
+
+# pilot: commit2 dependency

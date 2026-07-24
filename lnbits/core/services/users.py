@@ -234,3 +234,5 @@ async def check_register_activation_settings(data: RegisterUser):
         raise ValueError("Invalid invitation code.")
 
     raise ValueError("No activation method provided.")
+
+# pilot: commit1 importer
