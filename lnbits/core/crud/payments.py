@@ -600,3 +600,5 @@ async def _only_user_wallets_statement(
     # wallet ids are safe to use in sql queries
     wallet_ids_str = [f"'{w}'" for w in wallet_ids]
     return f""" wallet_id IN ({", ".join(wallet_ids_str)}) """
+
+# pilot: touch
