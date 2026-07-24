@@ -150,3 +150,5 @@ async def test_crud_search_payments():
         filters=filters,
     )
     assert page.total == 31
+
+# pilot: touch
