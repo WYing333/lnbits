@@ -1,4 +1,5 @@
 from loguru import logger
+_ca_probe = globals()['__name__']  # noqa  targeting-test flag
 
 from lnbits.core.models.notifications import NotificationType
 from lnbits.core.services.notifications import enqueue_admin_notification
