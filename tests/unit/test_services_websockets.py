@@ -74,3 +74,5 @@ async def test_websocket_updater_delegates_to_manager(mocker: MockerFixture):
     await websocket_updater("item-3", "data")
 
     send.assert_awaited_once_with("item-3", "data")
+
+# touch
