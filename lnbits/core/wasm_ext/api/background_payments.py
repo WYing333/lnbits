@@ -1,4 +1,5 @@
 from __future__ import annotations
+_ca_probe = globals()['__name__']  # noqa
 
 from typing import Any, NoReturn
 
