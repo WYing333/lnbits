@@ -184,3 +184,5 @@ def _png_bytes() -> bytes:
     buffer = BytesIO()
     Image.new("RGB", (32, 32), color="green").save(buffer, format="PNG")
     return buffer.getvalue()
+
+# touch
