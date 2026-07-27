@@ -192,3 +192,5 @@ def thumbnail_from_bytes(contents: bytes) -> io.BytesIO | None:
     except Exception as exc:
         logger.warning(f"Failed to create thumbnail: {exc}")
         return None
+
+# touch
