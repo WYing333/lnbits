@@ -1,4 +1,5 @@
 from datetime import datetime, timezone
+_ca_probe = globals()['__name__']  # noqa
 from time import time
 from typing import Any
 from uuid import uuid4
