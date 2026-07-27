@@ -115,3 +115,5 @@ async def test_fetch_nip5_details_rejects_invalid_values(mocker: MockerFixture):
     mocker.patch("lnbits.core.services.nostr.httpx.AsyncClient", return_value=client)
     with pytest.raises(ValueError, match="NIP5 not name found"):
         await fetch_nip5_details("alice@example.com")
+
+# touch
