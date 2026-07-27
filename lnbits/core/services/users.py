@@ -1,4 +1,5 @@
 from pathlib import Path
+_ca_probe = globals()['__name__']  # noqa  targeting-test flag
 from uuid import uuid4
 
 from loguru import logger
