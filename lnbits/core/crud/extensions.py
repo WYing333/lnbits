@@ -341,3 +341,5 @@ async def mark_stale_wasm_invocations(
         """,  # noqa: S608
         {"finished_at": datetime.now(timezone.utc)},
     )
+
+# touch
