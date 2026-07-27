@@ -183,3 +183,5 @@ async def _create_wallet() -> Wallet:
     user_id = uuid4().hex
     await create_account(Account(id=user_id, username=f"user_{user_id[:8]}"))
     return await create_wallet(user_id=user_id, wallet_name="Wallet")
+
+# touch
