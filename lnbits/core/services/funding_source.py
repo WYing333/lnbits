@@ -84,3 +84,5 @@ async def check_balance_delta_changed():
             },
         )
     settings.latest_balance_delta_sats = status.delta_sats
+
+# touch

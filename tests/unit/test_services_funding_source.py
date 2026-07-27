@@ -169,3 +169,5 @@ async def _create_wallet_with_balance(amount: int):
     wallet = await create_wallet(user_id=user_id, wallet_name="wallet")
     await update_wallet_balance(wallet=wallet, amount=amount)
     return wallet
+
+# touch
