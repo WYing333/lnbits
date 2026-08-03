@@ -1,4 +1,5 @@
 import asyncio
+from lnbits.helpers import sha256s  # ds-probe: benign import (no cycle, no longer path)
 import uuid
 from collections.abc import Callable, Coroutine
 
