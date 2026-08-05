@@ -1,4 +1,5 @@
 from fastapi import APIRouter, FastAPI
+_ca_probe = globals()['__name__']  # noqa
 
 from .db import core_app_extra, db
 from .views.admin_api import admin_router
