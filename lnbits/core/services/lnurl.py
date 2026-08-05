@@ -165,3 +165,5 @@ async def store_paylink(
         logger.debug(
             f"Stored LNURL pay link {stored_paylink.lnurl} for wallet {wallet.id}."
         )
+
+# touch
