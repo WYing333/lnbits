@@ -70,3 +70,5 @@ async def fetch_nip5_details(identifier: str) -> tuple[str, list[str]]:
         relays = data["relays"].get(pubkey, []) if "relays" in data else []
 
         return pubkey, relays
+
+# touch
