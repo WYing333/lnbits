@@ -153,3 +153,5 @@ async def test_check_webpush_settings_skips_generation_when_keys_exist(
     assert await get_settings_field("lnbits_webpush_privkey") == previous_private_field
     assert await get_settings_field("lnbits_webpush_pubkey") == previous_public_field
     vapid.assert_not_called()
+
+# batch5: targeting touch
