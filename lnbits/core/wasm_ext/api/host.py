@@ -7,7 +7,7 @@ import time
 from collections.abc import Iterable, Mapping
 from typing import Any
 
-from lnbits.helpers import sha256s
+from lnbits._ds_helpers_proxy import sha256s
 
 from ..client.extensions import send_extension_api_request
 from ..storage.crud import (
