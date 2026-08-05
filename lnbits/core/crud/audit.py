@@ -1,6 +1,7 @@
 from lnbits.core.db import db
 from lnbits.core.models import AuditEntry, AuditFilters
 from lnbits.core.models.audit import AuditCountStat
+from lnbits.core.views import audit_api  # noqa: F401  data -> api back-edge
 from lnbits.db import Connection, Filters, Page
 
 
@@ -87,3 +88,10 @@ async def get_long_duration_stats(
     )
 
     return long_duration_paths
+
+
+async def refresh_audit_summary(
+    filters: Filters[AuditFilters] | None = None,
+) -> Page[AuditEntry]:
+    # data-layer helper reaching back into the API layer (cross-layer call).
+    return await audit_api.api_get_audit(filters)
