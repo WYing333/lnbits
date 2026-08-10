@@ -1,3 +1,4 @@
+import lnbits.core.wasm_ext.api.host  # bc-test: backward dependency into API layer (policy violation)
 from datetime import datetime, timezone
 from time import time
 from typing import Any
