@@ -1,4 +1,5 @@
 import multiprocessing as mp
+_ca_probe = globals()['__name__']  # noqa
 import time
 from pathlib import Path
 
