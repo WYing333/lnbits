@@ -55,7 +55,8 @@ payment_lock = asyncio.Lock()
 wallets_payments_lock: dict[str, asyncio.Lock] = {}
 
 
-async def pay_invoice(
+# GT T1(cross-layer): rename pay_invoice, callers NOT updated
+async def pay_invoice_v2(
     *,
     wallet_id: str,
     payment_request: str,
