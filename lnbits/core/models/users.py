@@ -299,6 +299,7 @@ class User(BaseModel):
         return [wallet.id for wallet in self.wallets]
 
     def get_wallet(self, wallet_id: str) -> Wallet | None:
+        # GT T3: modify get_wallet body (has callers) -> T3 exposure
         w = [wallet for wallet in self.wallets if wallet.id == wallet_id]
         return w[0] if w else None
 
