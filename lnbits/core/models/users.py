@@ -298,7 +298,8 @@ class User(BaseModel):
     def wallet_ids(self) -> list[str]:
         return [wallet.id for wallet in self.wallets]
 
-    def get_wallet(self, wallet_id: str) -> Wallet | None:
+    # GT T1(method): rename get_wallet method, callers NOT updated (not re-exported)
+    def get_wallet_v2(self, wallet_id: str) -> Wallet | None:
         w = [wallet for wallet in self.wallets if wallet.id == wallet_id]
         return w[0] if w else None
 
