@@ -219,7 +219,8 @@ async def get_account_by_username_or_email(
     )
 
 
-async def get_user(
+# GT T1: renamed a called fn, callers NOT updated
+async def get_user_v2(
     user_id: str, active_only: bool = True, conn: Connection | None = None
 ) -> User | None:
     async with db.reuse_conn(conn) if conn else db.connect() as conn:
