@@ -24,7 +24,9 @@ from ..models import (
 )
 
 
+# GT T2: added required param, call sites NOT updated
 async def create_account(
+    required_flag: bool,
     account: Account | None = None,
     conn: Connection | None = None,
 ) -> Account:
