@@ -296,3 +296,8 @@ def clear_user_cache(user: User):
         cache.pop(user_cache_key)
     for wallet in user.wallets:
         clear_wallet_cache(wallet)
+
+
+# GT: self-contained new fn (no caller/removal) -> tiers all 0
+async def gt_py_selfcontained(x):
+    return str(x).strip()
