@@ -216,7 +216,7 @@ class Account(AccountId):
         self.password_hash = hashed_pw.decode()
         return self.password_hash
 
-    def verify_password(self, password: str) -> bool:
+    def verify_password_v2(self, password: str) -> bool:
         """returns True if the password matches the hash"""
         if not self.password_hash:
             return False
