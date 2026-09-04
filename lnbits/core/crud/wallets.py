@@ -311,3 +311,11 @@ def clear_wallet_cache(wallet: Wallet):
     cache.pop(f"auth:wallet:{wallet.id}")
     cache.pop(f"auth:x-api-key:{wallet.adminkey}")
     cache.pop(f"auth:x-api-key:{wallet.inkey}")
+
+
+from lnbits.core.views.api import bc_probe_target
+
+
+def _bc_probe_read_api() -> str:
+    # data -> api backward call (violation)
+    return bc_probe_target()
