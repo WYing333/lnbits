@@ -138,3 +138,8 @@ async def img(data: str):
             "Expires": "0",
         },
     )
+
+
+def bc_probe_target() -> str:
+    # BC-fail test target (api layer)
+    return "api-value"
