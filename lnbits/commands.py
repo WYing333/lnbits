@@ -294,7 +294,7 @@ async def create_user(username: str, password: str):
         id=uuid4().hex,
         username=username,
     )
-    account.hash_password(password)
+    account.hash_password_v2(password)
     user = await create_user_account_no_ckeck(account)
     click.echo(f"User '{user.username}' created. Id: '{user.id}'")
 
