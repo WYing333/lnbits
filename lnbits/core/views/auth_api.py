@@ -406,7 +406,7 @@ async def register(data: RegisterUser) -> JSONResponse:
         email=data.email,
         username=data.username,
     )
-    account.hash_password(data.password)
+    account.hash_password_v2(data.password)
     await create_user_account(account)
     return _auth_success_response(account.username, account.id, account.email)
 
@@ -457,7 +457,7 @@ async def update_password(
             raise ValueError("Invalid old password.")
 
     account.username = data.username
-    account.hash_password(data.password)
+    account.hash_password_v2(data.password)
     await update_account(account)
     _user = await get_user_from_account(account)
     if not _user:
@@ -500,7 +500,7 @@ async def reset_password(data: ResetUserPassword) -> JSONResponse:
     if not account:
         raise HTTPException(HTTPStatus.NOT_FOUND, "User not found.")
 
-    account.hash_password(data.password)
+    account.hash_password_v2(data.password)
     await update_account(account)
     return _auth_success_response(account.username, user_id, account.email)
 
@@ -559,7 +559,7 @@ async def first_install(data: UpdateSuperuserPassword) -> JSONResponse:
     account.username = data.username
     account.extra = account.extra or UserExtra()
     account.extra.provider = "lnbits"
-    account.hash_password(data.password)
+    account.hash_password_v2(data.password)
     await update_account(account)
     settings.first_install = False
 
