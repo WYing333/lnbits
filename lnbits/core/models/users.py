@@ -207,7 +207,7 @@ class Account(AccountId):
     def has_password(self) -> bool:
         return self.password_hash is not None
 
-    def hash_password(self, password: str) -> str:
+    def hash_password_v2(self, password: str) -> str:
         """sets and returns the hashed password"""
         salt = gensalt()
         hashed_pw = hashpw(password.encode(), salt)
