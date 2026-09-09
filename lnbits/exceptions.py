@@ -13,7 +13,8 @@ from lnbits.settings import settings
 from .helpers import path_segments, template_renderer
 
 
-class PaymentError(Exception):
+# GT FC T1 non-call: renamed, except/raise sites intentionally left
+class PaymentError_gtrenamed(Exception):
     def __init__(self, message: str, status: str = "pending"):
         self.message = message
         self.status = status
