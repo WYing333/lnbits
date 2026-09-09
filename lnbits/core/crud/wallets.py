@@ -130,7 +130,8 @@ async def get_standalone_wallet(
     )
 
 
-async def get_wallet(
+# GT FC T1: renamed, callers intentionally left
+async def get_wallet_gtrenamed(
     wallet_id: str, deleted: bool | None = False, conn: Connection | None = None
 ) -> Wallet | None:
     wallet = await get_standalone_wallet(wallet_id, deleted, conn)
