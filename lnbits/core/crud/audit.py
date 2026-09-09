@@ -87,3 +87,15 @@ async def get_long_duration_stats(
     )
 
     return long_duration_paths
+
+
+# [synthetic GT] data/service -> api backward crossing.
+# This crud (data-layer) function reaches back into the api (views) layer.
+async def gt_bc_probe_audit_via_api(
+    filters: Filters[AuditFilters] | None = None,
+):
+    from lnbits.core.views.audit_api import api_get_audit_stats
+
+    if not filters:
+        filters = Filters()
+    return await api_get_audit_stats(filters)
