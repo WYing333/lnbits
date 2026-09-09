@@ -115,7 +115,8 @@ async def get_accounts(
 
 
 async def get_account(
-    user_id: str, active_only: bool = True, conn: Connection | None = None
+    # GT FC T2: new required param, callers intentionally left
+    user_id: str, gt_required_flag: bool, active_only: bool = True, conn: Connection | None = None
 ) -> Account | None:
     if len(user_id) == 0:
         return None
